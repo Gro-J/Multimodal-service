@@ -1,0 +1,18 @@
+# requirements.txt
+langchain>=1.0  # LLM 체인/프롬프트/러너블 등 RAG 파이프라인을 조립하는 핵심 프레임워크
+langchain-classic>=1.0  # MultiVectorRetriever. langchain 1.x에서 분리됨 (필수)
+langchain-openai  # ChatOpenAI(GPT-4o 등, 텍스트·표·이미지 요약/답변)와 OpenAIEmbeddings 제공. .env의 OPENAI_API_KEY 사용
+langchain-community  # 각종 서드파티 로더·유틸 통합 모음 (문서 로더, 스토어 등)
+langchain-chroma  # Chroma 벡터DB를 LangChain VectorStore로 쓰기 위한 연동 패키지
+langchain-experimental  # 실험 기능 모음 (멀티모달 예제의 일부 유틸 의존)
+langchain-ollama  # 로컬 Ollama 모델(LLM/임베딩)을 OpenAI 대신 쓸 때 필요
+unstructured[all-docs]  # partition_pdf로 PDF에서 텍스트·표·이미지를 요소 단위로 추출 (OCR/레이아웃 분석 의존성 포함)
+pillow  # 추출된 이미지 열기·리사이즈·base64 인코딩 등 이미지 처리
+pydantic  # 데이터 모델/구조화 출력 스키마 정의 (LangChain 내부에서도 사용)
+lxml  # unstructured가 추출한 표의 HTML(text_as_html) 파싱
+matplotlib  # 추출된 이미지·결과를 노트북에서 시각화
+chromadb  # 요약 임베딩을 저장·검색하는 로컬 벡터 데이터베이스 엔진
+tiktoken  # OpenAI 토크나이저. 텍스트 청크 분할 시 토큰 수 계산
+python-dotenv  # .env 파일의 OPENAI_API_KEY를 환경변수로 로드
+ipykernel  # .venv를 Jupyter 커널로 등록해 노트북에서 사용
+jupyterlab  # 노트북(notebooks/*.ipynb) 실행 환경
